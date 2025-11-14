@@ -49,44 +49,61 @@ if (navToggle && navLinks) {
   });
 }
 
+// -------------------------
 // Audio playlist logic
-const audio = document.getElementById("audio-player");
-const trackList = document.getElementById("track-list");
-const playerTitle = document.getElementById("player-title");
-const playerSubtitle = document.getElementById("player-subtitle");
-const playerCover = document.getElementById("player-cover");
+// -------------------------
+window.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("audio-player");
+  const trackList = document.getElementById("track-list");
+  const cover = document.getElementById("player-cover");
+  const title = document.getElementById("player-title");
+  const subtitle = document.getElementById("player-subtitle");
 
-if (audio && trackList) {
-  trackList.addEventListener("click", (e) => {
-    const item = e.target.closest(".track-item");
-    if (!item) return;
+  if (!audio || !trackList) return;
 
-    const src = item.dataset.src;
-    const title = item.dataset.title || "";
-    const subtitle = item.dataset.subtitle || "";
-    const cover = item.dataset.cover || "";
+  function loadTrack(item, autoplay) {
+    const src = item.getAttribute("data-src");
+    const trackTitle = item.getAttribute("data-title") || "";
+    const coverSrc = item.getAttribute("data-cover");
+
+    if (!src) return;
+
+    // Set active class
+    document.querySelectorAll(".track-item").forEach(function (li) {
+      li.classList.remove("active");
+    });
+    item.classList.add("active");
 
     // Update audio source
-    audio.pause();
-    audio.setAttribute("src", src);
+    audio.src = src;
     audio.load();
 
-    // Update text and cover
-    if (playerTitle) playerTitle.textContent = title;
-    if (playerSubtitle) playerSubtitle.innerHTML = subtitle;
-    if (playerCover && cover) playerCover.setAttribute("src", cover);
+    // Update UI
+    if (cover && coverSrc) cover.src = coverSrc;
+    if (title) title.textContent = trackTitle;
+    if (subtitle) {
+      subtitle.textContent = "Magic Jazz Band – live recording";
+    }
 
-    // Highlight active track
-    trackList.querySelectorAll(".track-item").forEach((li) => {
-      li.classList.toggle("active", li === item);
-    });
+    if (autoplay) {
+      const p = audio.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
 
-    // Play only when user clicked (no autoplay on load)
-    audio.play().catch(() => {
-      // Ignore play promise failure (e.g., browser restrictions)
-    });
+  // Initial track: first item in list
+  const first = trackList.querySelector(".track-item");
+  if (first) {
+    loadTrack(first, false);
+  }
+
+  // Click handler: load + play selected track
+  trackList.addEventListener("click", function (e) {
+    const li = e.target.closest(".track-item");
+    if (!li) return;
+    loadTrack(li, true);
   });
-}
+});
 
 // Contact form status handling (optional nicer UX)
 const contactForm = document.getElementById("contact-form");
