@@ -79,43 +79,33 @@
       </div>
 
       <!-- Right: audio element + track list -->
-      <div class="player-controls">
-        <audio id="audio-player" controls>
-          Your browser does not support the audio element.
-        </audio>
+    <div class="player-controls">
+  <!-- IMPORTANT: initial src removed → JS will populate it -->
+  <audio id="audio-player" controls></audio>
 
-        <ul id="track-list" class="track-list">
-          <li
-            class="track-item active"
-            data-src="assets/audio/FlyMeToTheMoon.mp3"
-            data-title="Fly Me To The Moon"
-            data-cover="assets/img/cover_fly.jpg"
-          >
-            <span class="track-title">Fly Me To The Moon</span>
-            <span class="track-length">sample</span>
-          </li>
+  <ul id="track-list" class="track-list">
+    <li class="track-item active"
+        data-src="assets/audio/FlyMeToTheMoon.mp3"
+        data-title="Fly Me To The Moon"
+        data-cover="assets/img/cover_fly.jpg">
+      <span class="track-title">Fly Me To The Moon</span>
+    </li>
 
-          <li
-            class="track-item"
-            data-src="assets/audio/SingToTheMountain.mp3"
-            data-title="Sing To The Mountain"
-            data-cover="assets/img/cover_mountain.jpg"
-          >
-            <span class="track-title">Sing To The Mountain</span>
-            <span class="track-length">sample</span>
-          </li>
+    <li class="track-item"
+        data-src="assets/audio/SingToTheMountain.mp3"
+        data-title="Sing To The Mountain"
+        data-cover="assets/img/cover_mountain.jpg">
+      <span class="track-title">Sing To The Mountain</span>
+    </li>
 
-          <li
-            class="track-item"
-            data-src="assets/audio/CheekToCheek.mp3"
-            data-title="Cheek to Cheek"
-            data-cover="assets/img/cover_cheek.jpg"
-          >
-            <span class="track-title">Cheek to Cheek</span>
-            <span class="track-length">sample</span>
-          </li>
-        </ul>
-      </div>
+    <li class="track-item"
+        data-src="assets/audio/CheekToCheek.mp3"
+        data-title="Cheek to Cheek"
+        data-cover="assets/img/cover_cheek.jpg">
+      <span class="track-title">Cheek to Cheek</span>
+    </li>
+  </ul>
+</div>
     </div>
   </div>
 </section>
