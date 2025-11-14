@@ -13,6 +13,25 @@ window.addEventListener("load", function () {
   }
 });
 
+// Also try to start video on first user interaction (for strict autoplay policies)
+(function () {
+  const vid = document.getElementById("hero-video");
+  if (!vid) return;
+
+  function tryPlayOnce() {
+    vid.muted = true;
+    const p = vid.play();
+    if (p && p.catch) {
+      p.catch(() => {});
+    }
+    window.removeEventListener("click", tryPlayOnce);
+    window.removeEventListener("touchstart", tryPlayOnce);
+  }
+
+  window.addEventListener("click", tryPlayOnce, { once: true });
+  window.addEventListener("touchstart", tryPlayOnce, { once: true });
+})();
+
 // Mobile nav toggle
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
