@@ -416,10 +416,11 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    display: flex;          /* always flex, but collapsed via height */
   }
 
   .nav-links.open {
-    max-height: 240px;
+    max-height: 260px;      /* when “open” gets toggled by JS */
   }
 
   .nav-toggle {
@@ -434,6 +435,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
 @media (max-width: 480px) {
   .hero-content {
