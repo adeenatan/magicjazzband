@@ -452,3 +452,20 @@ body {
     height: 64px;
   }
 }
+
+
+.card-block, .media-item {
+  background: #333333;
+  color: #f5f3ee;
+}
+
+
+.btn-primary {
+  background-color: #57343c;
+  border-color: #57343c;
+}
+.btn-primary:hover {
+  background-color: #7b4a59;
+  border-color: #7b4a59;
+}
+
