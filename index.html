@@ -55,56 +55,70 @@
   </section>
 
   <!-- Listen -->
-  <section id="listen" class="section section-dark">
-    <div class="section-inner">
-      <h2>Listen</h2>
-      <p class="section-intro">
-        A few live recordings. Select a track to play, or pause anytime. No autoplay.
-      </p>
+ <section id="listen" class="section section-dark">
+  <div class="section-inner">
+    <h2>Listen</h2>
+    <p class="section-intro">
+      A few sample tunes from recent performances.
+    </p>
 
-      <div class="player-container">
-        <div class="player-info">
-          <img id="player-cover" src="assets/img/cover_fly.jpg" alt="Track cover" />
-          <div class="player-meta">
-            <div id="player-title" class="player-title">Fly Me To The Moon</div>
-            <div id="player-subtitle" class="player-subtitle">Magic Jazz Band &mdash; Live</div>
+    <div class="player-container">
+      <!-- Left: cover + meta -->
+      <div class="player-info">
+        <img
+          id="player-cover"
+          src="assets/img/cover_fly.jpg"
+          alt="Magic Jazz Band cover art"
+        />
+        <div class="player-meta">
+          <div id="player-title" class="player-title">Fly Me To The Moon</div>
+          <div id="player-subtitle" class="player-subtitle">
+            Magic Jazz Band – live recording
           </div>
         </div>
+      </div>
 
+      <!-- Right: audio element + track list -->
+      <div class="player-controls">
         <audio id="audio-player" controls>
-          <source src="assets/audio/FlyMeToTheMoon.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
 
         <ul id="track-list" class="track-list">
-          <li class="track-item active"
-              data-src="assets/audio/FlyMeToTheMoon.mp3"
-              data-title="Fly Me To The Moon"
-              data-subtitle="Magic Jazz Band &mdash; Live"
-              data-cover="assets/img/cover_fly.jpg">
+          <li
+            class="track-item active"
+            data-src="assets/audio/FlyMeToTheMoon.mp3"
+            data-title="Fly Me To The Moon"
+            data-cover="assets/img/cover_fly.jpg"
+          >
             <span class="track-title">Fly Me To The Moon</span>
-            
+            <span class="track-length">sample</span>
           </li>
-          <li class="track-item"
-              data-src="assets/audio/SingToTheMountain.mp3"
-              data-title="Sing To The Mountain"
-              data-subtitle="Magic Jazz Band &mdash; Live"
-              data-cover="assets/img/cover_mountain.jpg">
+
+          <li
+            class="track-item"
+            data-src="assets/audio/SingToTheMountain.mp3"
+            data-title="Sing To The Mountain"
+            data-cover="assets/img/cover_mountain.jpg"
+          >
             <span class="track-title">Sing To The Mountain</span>
-            
+            <span class="track-length">sample</span>
           </li>
-          <li class="track-item"
-              data-src="assets/audio/CheekToCheek.mp3"
-              data-title="Cheek to Cheek"
-              data-subtitle="Magic Jazz Band &mdash; Live"
-              data-cover="assets/img/cover_cheek.jpg">
+
+          <li
+            class="track-item"
+            data-src="assets/audio/CheekToCheek.mp3"
+            data-title="Cheek to Cheek"
+            data-cover="assets/img/cover_cheek.jpg"
+          >
             <span class="track-title">Cheek to Cheek</span>
-            
+            <span class="track-length">sample</span>
           </li>
         </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Media -->
   <section id="media" class="section section-light">
