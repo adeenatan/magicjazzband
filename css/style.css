@@ -48,6 +48,7 @@ body {
 .nav-brand {
   font-weight: 600;
   letter-spacing: 0.05em;
+  font-size: 1rem;
 }
 
 .nav-links {
@@ -56,7 +57,9 @@ body {
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap;
 }
+
 
 .nav-links a {
   color: #f7f7f7;
