@@ -19,6 +19,7 @@ body {
 
 body {
   line-height: 1.5;
+   font-size: 16px;
 }
 
 /* ------------------------------
@@ -60,7 +61,7 @@ body {
 .nav-links a {
   color: #f7f7f7;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .nav-links a:hover {
@@ -180,6 +181,7 @@ body {
   margin-top: 0;
   margin-bottom: 1.75rem;
   color: #aaa;
+   font-size: 1rem;
 }
 
 .section-light {
@@ -197,6 +199,7 @@ body {
 .about-quote {
   font-style: italic;
   color: #777;
+  font-size: 1rem;
 }
 
 .about-quote span {
@@ -243,7 +246,7 @@ body {
 }
 
 .player-subtitle {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #bbb;
 }
 
@@ -274,7 +277,7 @@ body {
 }
 
 .track-item .track-length {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #999;
 }
 
@@ -340,7 +343,7 @@ body {
 
 .form-row label {
   margin-bottom: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .form-row input,
@@ -375,7 +378,7 @@ body {
 
 .form-status {
   margin-top: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 /* ------------------------------
