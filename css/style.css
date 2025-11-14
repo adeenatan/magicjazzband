@@ -46,10 +46,10 @@ body {
   justify-content: space-between;
 }
 
-.nav-brand {
+.nav-brand {  
+  font-size: 1.25rem;  /* default ~20px */
   font-weight: 600;
-  letter-spacing: 0.05em;
-  font-size: 1rem;
+  letter-spacing: 0.04em;
 }
 
 .nav-links {
@@ -65,7 +65,9 @@ body {
 .nav-links a {
  color: #c8b591;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;     /* slightly larger (≈17–18px) */
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
 .nav-links a:hover {
