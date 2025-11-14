@@ -169,6 +169,7 @@ body {
 
 .section {
   padding: 5rem 1.5rem 4rem;
+  min-height: 80vh;   /* each section roughly 80% of the viewport height */
 }
 
 .section-inner {
