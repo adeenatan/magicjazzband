@@ -30,7 +30,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#listen">Listen</a></li>
         <li><a href="#media">Media</a></li>
-        <li><a href="#gigs">Gigs</a></li> <!-- NEW -->
+        <li><a href="#gigs">Gigs</a></li> <!-- added -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -91,7 +91,6 @@
 
         <!-- Right: audio element + track list -->
         <div class="player-controls">
-          <!-- IMPORTANT: initial src removed → JS will populate it -->
           <audio id="audio-player" controls></audio>
 
           <ul id="track-list" class="track-list">
@@ -130,7 +129,6 @@
       </p>
 
       <div class="media-grid">
-        <!-- Replace src with your own images -->
         <figure class="media-item">
           <img src="assets/img/band_photo1.jpg" alt="Magic Jazz Band live" />
           <figcaption>Live at a community concert.</figcaption>
@@ -141,7 +139,6 @@
           <figcaption>Rehearsal moments.</figcaption>
         </figure>
 
-        <!-- YouTube embed -->
         <div class="media-item media-video">
           <div class="video-wrapper">
             <iframe
@@ -159,86 +156,25 @@
     </div>
   </section>
 
-  <!-- Gigs (NEW) -->
-  <section id="gigs" class="section section-light gigs-section">
+  <!-- Gigs -->
+  <section id="gigs" class="section gigs-section">
     <div class="section-inner">
       <h2>Gigs</h2>
       <p class="section-intro">
-        A sample of recent performances – from school events and picnics to farm concerts and Stanford gatherings.
+        A sample of recent performances – from school gratitude events and picnics to farm concerts and Stanford gatherings.
       </p>
 
       <div class="gigs-table-wrapper">
         <table class="gigs-table">
           <thead>
             <tr>
-              <th>Location</th>
-              <th>   </th>
-              <th>Date</th>
               <th>Event</th>
+              <th>Location</th>
+              <th>Date</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- latest first -->
-            <tr>
-              <td>Woodside School – Annual Fund Kick Off</td>
-              <td></td>
-              <td>October 21, 2025</td>
-              <td>Private event</td>
-            </tr>
-            <tr>
-              <td>Community Picnic - Peer's Park</td>
-              <td></td>
-              <td>October 12, 2025</td>
-              <td>Public event</td>
-            </tr>
-            <tr>
-              <td>Hidden Villa – Los Altos Hills</td>
-              <td></td>
-              <td>October 3, 2025</td>
-              <td>Community event</td>
-            </tr>
-            <tr>
-              <td>Dream Volunteers – Community Event</td>
-              <td></td>
-              <td>September 4, 2025</td>
-              <td>Private event</td>
-            </tr>
-            <tr>
-              <td>Dream Volunteers – Summer Event</td>
-              <td></td>
-              <td>August 28, 2025</td>
-              <td>Private event</td>
-            </tr>
-            <tr>
-              <td>Hidden Villa – Summer Outdoor Concert</td>
-              <td></td>
-              <td>August 23, 2025</td>
-              <td>Private event</td>
-            </tr>
-            <tr>
-              <td>Neighborhood Block Party</td>
-              <td></td>
-              <td>June 8, 2025</td>
-              <td>Communnity event</td>
-            </tr>
-            <tr>
-              <td>CSA – Spring Celebration</td>
-              <td></td>
-              <td>May 9, 2025</td>
-              <td>Communnity event</td>
-            </tr>
-            <tr>
-              <td>Hidden Villa – Winter Show</td>
-              <td></td>
-              <td>February 1, 2025</td>
-              <td>Private event</td>
-            </tr>
-            <tr>
-              <td>Stanford Epidemiology Department – Holiday Event</td>
-              <td></td>
-              <td>December 8, 2022</td>
-              <td>Private event</td>
-            </tr>
+          <tbody id="gigs-body">
+            <!-- rows will be injected by JavaScript -->
           </tbody>
         </table>
       </div>
