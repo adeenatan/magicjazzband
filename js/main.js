@@ -191,6 +191,13 @@ document.addEventListener("DOMContentLoaded", function () {
       dateISO: "2025-02-01",
       dateLabel: "February 1, 2025",
     },
+     {
+      code: "The Village Chabad  12.15.24",
+      event: "The Village Chabad – Chanukah 2024",
+      location: "Portola Valley, CA",
+      dateISO: "2024-12-15",
+      dateLabel: "December 15, 2024",
+    },
     {
       code: "EPNAPicnic 10.1.23",
       event: "Peers Park Neighborhood Picnic",
