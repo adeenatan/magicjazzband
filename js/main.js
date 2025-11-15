@@ -315,3 +315,8 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+// Fade-in when page fully loaded
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});
+
