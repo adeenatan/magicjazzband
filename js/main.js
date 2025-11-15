@@ -107,6 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // -------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
+     {
+      code: "HV 11.23.25",
+      event: "Hidden Villa event",
+      location: "Los Altos Hills, CA",
+      dateISO: "2025-11-23",
+      dateLabel: "November 23, 2025",
+    },
     {
       code: "School 10.21.25",
       event: "Woodside School – Gratitude Gathering for Annual Fund Kick Off",
