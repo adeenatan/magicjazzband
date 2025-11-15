@@ -30,23 +30,25 @@
         <li><a href="#about">About</a></li>
         <li><a href="#listen">Listen</a></li>
         <li><a href="#media">Media</a></li>
+        <li><a href="#gigs">Gigs</a></li> <!-- NEW -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-<section id="home" class="section-hero">
-  <div class="hero-media">
-    <video id="hero-video" autoplay muted loop playsinline poster="assets/img/front_page.jpg">
-      <source src="assets/video/front_page.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-content">
-    <h1>Magic Jazz Band</h1>
-    <h2>A little swing, a little sorcery.</h2>
-  </div>
-</section>
+  <!-- Hero -->
+  <section id="home" class="section-hero">
+    <div class="hero-media">
+      <video id="hero-video" autoplay muted loop playsinline poster="assets/img/front_page.jpg">
+        <source src="assets/video/front_page.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Magic Jazz Band</h1>
+      <h2>A little swing, a little sorcery.</h2>
+    </div>
+  </section>
 
   <!-- About -->
   <section id="about" class="section section-light">
@@ -64,60 +66,60 @@
   </section>
 
   <!-- Listen -->
- <section id="listen" class="section section-dark">
-  <div class="section-inner">
-    <h2>Listen</h2>
-    <p class="section-intro">
-      A few sample tunes from recent recordings.
-    </p>
+  <section id="listen" class="section section-dark">
+    <div class="section-inner">
+      <h2>Listen</h2>
+      <p class="section-intro">
+        A few sample tunes from recent recordings.
+      </p>
 
-    <div class="player-container">
-      <!-- Left: cover + meta -->
-      <div class="player-info">
-        <img
-          id="player-cover"
-          src="assets/img/cover_fly.jpg"
-          alt="Magic Jazz Band cover art"
-        />
-        <div class="player-meta">
-          <div id="player-title" class="player-title">Fly Me To The Moon</div>
-          <div id="player-subtitle" class="player-subtitle">
-            Magic Jazz Band – live recording
+      <div class="player-container">
+        <!-- Left: cover + meta -->
+        <div class="player-info">
+          <img
+            id="player-cover"
+            src="assets/img/cover_fly.jpg"
+            alt="Magic Jazz Band cover art"
+          />
+          <div class="player-meta">
+            <div id="player-title" class="player-title">Fly Me To The Moon</div>
+            <div id="player-subtitle" class="player-subtitle">
+              Magic Jazz Band – live recording
+            </div>
           </div>
         </div>
+
+        <!-- Right: audio element + track list -->
+        <div class="player-controls">
+          <!-- IMPORTANT: initial src removed → JS will populate it -->
+          <audio id="audio-player" controls></audio>
+
+          <ul id="track-list" class="track-list">
+            <li class="track-item active"
+                data-src="assets/audio/FlyMeToTheMoon.mp3"
+                data-title="Fly Me To The Moon"
+                data-cover="assets/img/cover_fly.jpg">
+              <span class="track-title">Fly Me To The Moon</span>
+            </li>
+
+            <li class="track-item"
+                data-src="assets/audio/SingToTheMountain.mp3"
+                data-title="Sing To The Mountain"
+                data-cover="assets/img/cover_mountain.jpg">
+              <span class="track-title">Sing To The Mountain</span>
+            </li>
+
+            <li class="track-item"
+                data-src="assets/audio/CheekToCheek.mp3"
+                data-title="Cheek to Cheek"
+                data-cover="assets/img/cover_cheek.jpg">
+              <span class="track-title">Cheek to Cheek</span>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <!-- Right: audio element + track list -->
-    <div class="player-controls">
-  <!-- IMPORTANT: initial src removed → JS will populate it -->
-  <audio id="audio-player" controls></audio>
-
-  <ul id="track-list" class="track-list">
-    <li class="track-item active"
-        data-src="assets/audio/FlyMeToTheMoon.mp3"
-        data-title="Fly Me To The Moon"
-        data-cover="assets/img/cover_fly.jpg">
-      <span class="track-title">Fly Me To The Moon</span>
-    </li>
-
-    <li class="track-item"
-        data-src="assets/audio/SingToTheMountain.mp3"
-        data-title="Sing To The Mountain"
-        data-cover="assets/img/cover_mountain.jpg">
-      <span class="track-title">Sing To The Mountain</span>
-    </li>
-
-    <li class="track-item"
-        data-src="assets/audio/CheekToCheek.mp3"
-        data-title="Cheek to Cheek"
-        data-cover="assets/img/cover_cheek.jpg">
-      <span class="track-title">Cheek to Cheek</span>
-    </li>
-  </ul>
-</div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Media -->
   <section id="media" class="section section-light">
@@ -139,20 +141,106 @@
           <figcaption>Rehearsal moments.</figcaption>
         </figure>
 
-        <!-- Example YouTube embed (replace VIDEO_ID with your video) -->
-       <div class="media-item media-video">
-  <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/Z5CkaZ_3SNk?si=QRcrfhtUODsJpgSl"
-      title="Magic Jazz Band – Columbia University Performance"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
+        <!-- YouTube embed -->
+        <div class="media-item media-video">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/Z5CkaZ_3SNk?si=QRcrfhtUODsJpgSl"
+              title="Magic Jazz Band – Columbia University Performance"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Gigs (NEW) -->
+  <section id="gigs" class="section section-light gigs-section">
+    <div class="section-inner">
+      <h2>Gigs</h2>
+      <p class="section-intro">
+        A sample of recent performances – from school gratitude events and picnics to farm concerts and Stanford gatherings.
+      </p>
+
+      <div class="gigs-table-wrapper">
+        <table class="gigs-table">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Time</th>
+              <th>Date</th>
+              <th>Event</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- latest first -->
+            <tr>
+              <td>Woodside School – Gratitude Gathering for Annual Fund Kick Off</td>
+              <td></td>
+              <td>October 21, 2025</td>
+              <td>School 10.21.25</td>
+            </tr>
+            <tr>
+              <td>Community Picnic</td>
+              <td></td>
+              <td>October 12, 2025</td>
+              <td>Picnic 10.12.25</td>
+            </tr>
+            <tr>
+              <td>Hidden Villa – Los Altos Hills</td>
+              <td></td>
+              <td>October 3, 2025</td>
+              <td>HV 10.3.25</td>
+            </tr>
+            <tr>
+              <td>Dream Volunteers – Community Event</td>
+              <td></td>
+              <td>September 4, 2025</td>
+              <td>DreamVols 9.4.25</td>
+            </tr>
+            <tr>
+              <td>Dream Volunteers – Summer Event</td>
+              <td></td>
+              <td>August 28, 2025</td>
+              <td>DreamVols 8.28.25</td>
+            </tr>
+            <tr>
+              <td>Hidden Villa – Summer Outdoor Concert</td>
+              <td></td>
+              <td>August 23, 2025</td>
+              <td>HV 8.23.25</td>
+            </tr>
+            <tr>
+              <td>Neighborhood Block Party</td>
+              <td></td>
+              <td>June 8, 2025</td>
+              <td>BlockParty 6.8.25</td>
+            </tr>
+            <tr>
+              <td>CSA – Spring Celebration</td>
+              <td></td>
+              <td>May 9, 2025</td>
+              <td>CSA 5.9.25</td>
+            </tr>
+            <tr>
+              <td>Hidden Villa – Winter Show</td>
+              <td></td>
+              <td>February 1, 2025</td>
+              <td>Hidden Villa 2.1.25</td>
+            </tr>
+            <tr>
+              <td>Stanford Epidemiology Department – Holiday Event</td>
+              <td></td>
+              <td>December 8, 2022</td>
+              <td>Epidemiology 12.8.22</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -165,7 +253,6 @@
         Booking, events, or questions? Drop us a note and we’ll get back soon.
       </p>
 
-      <!-- Formspree example; replace YOUR_FORMSPREE_ID with your actual ID -->
       <form
         id="contact-form"
         class="contact-form"
@@ -186,7 +273,6 @@
           <textarea id="message" name="message" rows="4" required></textarea>
         </div>
 
-        <!-- Optional: where to send a copy / subject -->
         <input type="hidden" name="_subject" value="New Magic Jazz Band contact" />
 
         <button type="submit">Send</button>
@@ -201,9 +287,6 @@
     </div>
   </footer>
 
-    <script src="js/main.js"></script>
-  
-
-
+  <script src="js/main.js"></script>
 </body>
 </html>
