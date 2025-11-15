@@ -198,6 +198,13 @@ document.addEventListener("DOMContentLoaded", function () {
       dateISO: "2024-12-15",
       dateLabel: "December 15, 2024",
     },
+        {
+      code: "EPNAPicnic 10.13.24",
+      event: "Peers Park Neighborhood Picnic",
+      location: "Palo Alto, CA",
+      dateISO: "2024-10-13",
+      dateLabel: "October 13, 2024",
+    },
     {
       code: "EPNAPicnic 10.1.23",
       event: "Peers Park Neighborhood Picnic",
