@@ -213,6 +213,13 @@ document.addEventListener("DOMContentLoaded", function () {
       dateISO: "2024-12-15",
       dateLabel: "December 15, 2024",
     },
+         {
+      code: "Portola Vineyards  12.08.24",
+      event: "Portola Vineyards",
+      location: "Portola Valley, CA",
+      dateISO: "2024-12-08",
+      dateLabel: "December 8, 2024",
+    },
         {
       code: "EPNAPicnic 10.13.24",
       event: "Peers Park Neighborhood Picnic",
