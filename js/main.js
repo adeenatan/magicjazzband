@@ -1,51 +1,61 @@
- // -------------------------
-// Hero video: desktop vs mobile source + autoplay handling
+// -------------------------
+// Hero video: desktop vs mobile source + autoplay debug version
 // -------------------------
 (function () {
   const heroVideo = document.getElementById("hero-video");
-  if (!heroVideo) return;
+  if (!heroVideo) {
+    console.log("DEBUG: No hero-video element found");
+    return;
+  }
 
   function pickHeroSrc() {
-    // Use viewport width to decide: mobile vs desktop/tablet
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     const targetSrc = isMobile
       ? "assets/video/front_page_mobile.mp4"
       : "assets/video/front_page.mp4";
 
-    // Avoid reloading if it's already set to this source
-    if (heroVideo.dataset.loadedSrc === targetSrc) return;
+    console.log("DEBUG: pickHeroSrc() running. isMobile =", isMobile);
+    console.log("DEBUG: targetSrc =", targetSrc);
+
+    if (heroVideo.dataset.loadedSrc === targetSrc) {
+      console.log("DEBUG: Source unchanged; not reloading.");
+      return;
+    }
 
     heroVideo.src = targetSrc;
     heroVideo.dataset.loadedSrc = targetSrc;
     heroVideo.load();
 
+    console.log("DEBUG: Video src set to", heroVideo.src);
+
     heroVideo.muted = true;
+
     const playPromise = heroVideo.play();
     if (playPromise && playPromise.catch) {
-      playPromise.catch(() => {
-        // Autoplay might be blocked; we'll try again on user interaction
+      playPromise.catch((err) => {
+        console.log("DEBUG: Autoplay blocked or failed:", err);
       });
     }
   }
 
-  // Initial pick when page finishes loading
-  window.addEventListener("load", pickHeroSrc);
+  window.addEventListener("load", () => {
+    console.log("DEBUG: window load fired");
+    pickHeroSrc();
+  });
 
-  // Update on resize/orientation change (debounced)
+  // Handle orientation/resize
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(pickHeroSrc, 200);
   });
 
-  // Also try to start video on first user interaction (for strict autoplay policies)
+  // Try playing on first interaction
   function tryPlayOnInteraction() {
+    console.log("DEBUG: User interaction triggered play()");
     heroVideo.muted = true;
-    const p = heroVideo.play();
-    if (p && p.catch) {
-      p.catch(() => {});
-    }
+    heroVideo.play().catch(() => {});
     window.removeEventListener("click", tryPlayOnInteraction);
     window.removeEventListener("touchstart", tryPlayOnInteraction);
   }
@@ -53,23 +63,6 @@
   window.addEventListener("click", tryPlayOnInteraction, { once: true });
   window.addEventListener("touchstart", tryPlayOnInteraction, { once: true });
 })();
-
-// Mobile nav toggle
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
-
-  // Close menu when clicking a link (mobile)
-  navLinks.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      navLinks.classList.remove("open");
-    }
-  });
-}
 
 // -------------------------
 // Audio playlist logic
