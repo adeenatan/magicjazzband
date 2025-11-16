@@ -1,35 +1,57 @@
-// Try to ensure hero video plays (muted) as background
-window.addEventListener("load", function () {
-  const vid = document.getElementById("hero-video");
-  if (!vid) return;
-
-  vid.muted = true; // just in case
-  const playPromise = vid.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(function (err) {
-      // If autoplay is blocked, we just silently keep the poster/fallback image.
-      console.log("Hero video autoplay was blocked:", err);
-    });
-  }
-});
-
-// Also try to start video on first user interaction (for strict autoplay policies)
+ // -------------------------
+// Hero video: desktop vs mobile source + autoplay handling
+// -------------------------
 (function () {
-  const vid = document.getElementById("hero-video");
-  if (!vid) return;
+  const heroVideo = document.getElementById("hero-video");
+  if (!heroVideo) return;
 
-  function tryPlayOnce() {
-    vid.muted = true;
-    const p = vid.play();
+  function pickHeroSrc() {
+    // Use viewport width to decide: mobile vs desktop/tablet
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    const targetSrc = isMobile
+      ? "assets/video/front_page_mobile.mp4"
+      : "assets/video/front_page.mp4";
+
+    // Avoid reloading if it's already set to this source
+    if (heroVideo.dataset.loadedSrc === targetSrc) return;
+
+    heroVideo.src = targetSrc;
+    heroVideo.dataset.loadedSrc = targetSrc;
+    heroVideo.load();
+
+    heroVideo.muted = true;
+    const playPromise = heroVideo.play();
+    if (playPromise && playPromise.catch) {
+      playPromise.catch(() => {
+        // Autoplay might be blocked; we'll try again on user interaction
+      });
+    }
+  }
+
+  // Initial pick when page finishes loading
+  window.addEventListener("load", pickHeroSrc);
+
+  // Update on resize/orientation change (debounced)
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(pickHeroSrc, 200);
+  });
+
+  // Also try to start video on first user interaction (for strict autoplay policies)
+  function tryPlayOnInteraction() {
+    heroVideo.muted = true;
+    const p = heroVideo.play();
     if (p && p.catch) {
       p.catch(() => {});
     }
-    window.removeEventListener("click", tryPlayOnce);
-    window.removeEventListener("touchstart", tryPlayOnce);
+    window.removeEventListener("click", tryPlayOnInteraction);
+    window.removeEventListener("touchstart", tryPlayOnInteraction);
   }
 
-  window.addEventListener("click", tryPlayOnce, { once: true });
-  window.addEventListener("touchstart", tryPlayOnce, { once: true });
+  window.addEventListener("click", tryPlayOnInteraction, { once: true });
+  window.addEventListener("touchstart", tryPlayOnInteraction, { once: true });
 })();
 
 // Mobile nav toggle
