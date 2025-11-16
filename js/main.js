@@ -338,29 +338,7 @@ if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
-// -------------------------
-// Mobile nav toggle
-// -------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  const navToggle = document.querySelector(".nav-toggle");
-  const navLinks  = document.querySelector(".nav-links");
-
-  if (!navToggle || !navLinks) return;
-
-  // Toggle menu open/closed
-  navToggle.addEventListener("click", function () {
-    const isOpen = navLinks.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // Close menu after clicking a link (nice on mobile)
-  navLinks.addEventListener("click", function (e) {
-    if (e.target.closest("a")) {
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-});
+ 
 
 // -------------------------
 // Mobile nav toggle + shrink-on-scroll header
