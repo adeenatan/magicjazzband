@@ -87,15 +87,9 @@ h1, h2, h3, h4, h5, h6 {
 .nav-logo {
   height: 64px;     /* large logo over the hero */
   width: auto;
+  filter: invert(1);     /* turns black -> white for transparent SVGs */
   margin-right: 0.5rem;
   transition: height 0.3s ease, transform 0.3s ease;
-}
-
-.nav-logo svg {
-  height: 64px;
-  width: auto;
-  transition: height 0.3s ease;
-  fill: #ffffff;     /* or any color */
 }
 
 .site-header.scrolled .nav-logo svg {
