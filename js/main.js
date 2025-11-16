@@ -362,6 +362,50 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// -------------------------
+// Mobile nav toggle + shrink-on-scroll header
+// -------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks  = document.querySelector(".nav-links");
+  const header    = document.querySelector(".site-header");
+  const hero      = document.querySelector(".section-hero");
+
+  // --- Mobile hamburger behavior ---
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Close menu after choosing a link (good on mobile)
+    navLinks.addEventListener("click", function (e) {
+      if (e.target.closest("a")) {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  // --- Header stripe + logo shrink on scroll ---
+  if (header && hero) {
+    const heroHeight = hero.offsetHeight;
+
+    function updateHeaderOnScroll() {
+      const threshold = heroHeight * 0.25; // start effect after ~25% scroll
+      if (window.scrollY > threshold) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+
+    // Run once on load, then on scroll
+    updateHeaderOnScroll();
+    window.addEventListener("scroll", updateHeaderOnScroll);
+  }
+});
+
 // Fade-in when page fully loaded
 window.addEventListener("load", () => {
   document.body.classList.add("page-loaded");
