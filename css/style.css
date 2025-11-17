@@ -372,38 +372,56 @@ h1, h2, h3, h4, h5, h6 {
 /* ------------------------------
    Media grid
    ------------------------------ */
+/* ------------------------------
+   Media grid
+   ------------------------------ */
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-.media-item img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
+.media-item {
+  display: flex;
+  flex-direction: column;
 }
 
-.media-item figcaption {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-.media-video .video-wrapper {
+.media-thumb {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%;        /* 16:9 aspect ratio */
   height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #333;              /* fallback background */
 }
 
-.media-video iframe {
+/* Images inside thumbs */
+.media-thumb img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  object-fit: cover;             /* crop to fill, like album art */
+  display: block;
 }
+
+/* Videos inside thumbs */
+.media-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Caption under each card */
+.media-item figcaption {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
 
 /* ------------------------------
    Contact form
