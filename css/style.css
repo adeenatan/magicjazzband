@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-logo {
   height: 40px;     /* large logo over the hero */
   width: auto;
-  filter: invert(1);     /* turns black -> white for transparent SVGs */
+/*  filter: invert(1);     /* turns black -> white for transparent SVGs */
   margin-right: 0.5rem;
   transition: height 0.3s ease, transform 0.3s ease;
 }
