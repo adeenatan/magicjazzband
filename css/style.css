@@ -624,12 +624,12 @@ body {
 /* Larger About text on desktop */
 @media (min-width: 900px) {
   #about p {
-    font-size: 1.15rem;
-    line-height: 1.65;
+    font-size: 1.35rem;
+    line-height: 1.85;
   }
 
   #about .about-quote {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
   }
 }
 
