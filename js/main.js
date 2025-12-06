@@ -123,6 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
      {
+      code: "WS 12.19.25",
+      event: "Winter solstice event",
+      location: "Palo Alto, CA",
+      dateISO: "2025-12-19",
+      dateLabel: "December 19, 2025",
+    }, 
+    {
       code: "HV 11.23.25",
       event: "Hidden Villa event",
       location: "Los Altos Hills, CA",
