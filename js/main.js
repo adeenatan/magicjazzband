@@ -123,6 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
      {
+      code: "Anna 2.22.26",
+      event: "Anna's Event",
+      location: "Los Altos, CA",
+      dateISO: "2026-02-22",
+      dateLabel: "February 22, 2026",
+    }, 
+     {
       code: "WS 12.19.25",
       event: "Winter solstice event",
       location: "Palo Alto, CA",
