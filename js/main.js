@@ -122,6 +122,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // -------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
+       {
+      code: "HV 05.02.26",
+      event: "Hidden Villa event",
+      location: "Los Altos Hills, CA",
+      dateISO: "2026-05-05",
+      dateLabel: "May 2, 2026",
+    },
      {
       code: "Anna 2.22.26",
       event: "Anna's Event",
