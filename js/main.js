@@ -122,6 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
 // -------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
+        {
+      code: "BlockParty 6.7.26",
+      event: "Evergreen Neighborhood Block Party",
+      location: "Palo Alto, CA",
+      dateISO: "2026-06-07",
+      dateLabel: "June 7, 2026",
+    },
+      {
+      code: "Edgar 05.35.26",
+      event: "Private event",
+      location: "San Fransisco, CA",
+      dateISO: "2026-05-25",
+      dateLabel: "May 25, 2026",
+    },
        {
       code: "HV 05.02.26",
       event: "Hidden Villa event",
