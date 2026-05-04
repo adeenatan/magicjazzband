@@ -633,3 +633,54 @@ body {
   }
 }
 
+
+
+/* ------------------------------
+   Larger embedded YouTube players
+   ------------------------------
+   Keep photos as compact cards, but let videos use a full-width,
+   reasonably sized player. The YouTube Short uses a vertical 9:16 box.
+*/
+.media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.media-item {
+  border-radius: 12px;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.media-item-video {
+  grid-column: 1 / -1;
+}
+
+.media-thumb {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  padding-bottom: 0;
+}
+
+.media-item-video .media-thumb {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.media-item-short .media-thumb {
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+}
+
+@media (max-width: 700px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-item-video {
+    grid-column: auto;
+  }
+
+  .media-item-short .media-thumb {
+    max-width: min(100%, 360px);
+  }
+}
