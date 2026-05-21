@@ -130,11 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
       dateLabel: "June 7, 2026",
     },
       {
-      code: "Edgar 05.35.26",
+      code: "Edgar 05.24.26",
       event: "Private event",
       location: "San Fransisco, CA",
-      dateISO: "2026-05-25",
-      dateLabel: "May 25, 2026",
+      dateISO: "2026-05-24",
+      dateLabel: "May 24, 2026",
     },
        {
       code: "HV 05.02.26",
