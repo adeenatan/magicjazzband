@@ -123,6 +123,34 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const gigs = [
         {
+      code: "BlockParty 10.7.26",
+      event: "Evergreen Neighborhood Block Party",
+      location: "Palo Alto, CA",
+      dateISO: "2026-10-xx",
+      dateLabel: "Oct, 2026",
+    },
+          {
+      code: "SH 10.01.26",
+      event: "Stanford Hospital event",
+      location: "Stanford, CA",
+      dateISO: "2026-10-01",
+      dateLabel: "Oct 01, 2026",
+    },
+          {
+      code: "Simran 09.19.26",
+      event: "Private event",
+      location: "San Fransisco, CA",
+      dateISO: "2026-09-19",
+      dateLabel: "Sep 19, 2026",
+    },
+          {
+      code: "HV 09.18.26",
+      event: "Hidden Villa event",
+      location: "Los Altos Hills, CA",
+      dateISO: "2026-09-18",
+      dateLabel: "Sep 18, 2026",
+    },
+           {
       code: "BlockParty 6.7.26",
       event: "Evergreen Neighborhood Block Party",
       location: "Palo Alto, CA",
